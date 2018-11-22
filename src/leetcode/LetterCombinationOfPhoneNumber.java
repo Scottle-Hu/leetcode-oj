@@ -58,24 +58,23 @@ public class LetterCombinationOfPhoneNumber {
             add('z');
         }});
         List<String> ret = new ArrayList<>();
-        Stack<Character> stack = new Stack<>();
+        Stack<Integer> stack = new Stack<>();
         char[] chars = digits.toCharArray();
-        for (char ch : chars) {
-            stack.push(num2Letter.get(ch).get(0));
+        for (int i = 0; i < chars.length; i++) {
+            stack.push(0);
         }
         int index = chars.length - 1;
-        ret.add(buildFromStack(stack));
+        ret.add(buildFromStack(stack, num2Letter, chars));
         while (!stack.isEmpty()) {
-            Character pop = stack.pop();
+            int pop = stack.pop();
             List<Character> letters = num2Letter.get(chars[index]);
-            int in = letters.indexOf(pop);
-            if (in < letters.size() - 1) {
-                stack.push(letters.get(in + 1));
+            if (pop < letters.size() - 1) {
+                stack.push(pop + 1);
                 while (index < chars.length - 1) {
                     index++;
-                    stack.push(num2Letter.get(chars[index]).get(0));
+                    stack.push(0);
                 }
-                ret.add(buildFromStack(stack));
+                ret.add(buildFromStack(stack, num2Letter, chars));
             } else {
                 index--;
             }
@@ -83,10 +82,10 @@ public class LetterCombinationOfPhoneNumber {
         return ret;
     }
 
-    private String buildFromStack(Stack<Character> s) {
+    private String buildFromStack(Stack<Integer> s, Map<Character, List<Character>> map, char[] chars) {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < s.size(); i++) {
-            sb.append(s.get(i));
+            sb.append(map.get(chars[i]).get(s.get(i)));
         }
         return sb.toString();
     }
