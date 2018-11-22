@@ -2,6 +2,7 @@ package leetcode;
 
 /**
  * leetcode: https://leetcode.com/problems/longest-common-prefix/
+ * result: success
  *
  * @author huqj
  */
