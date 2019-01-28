@@ -1,12 +1,11 @@
 package leetcode;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
  * leetcode: https://leetcode.com/problems/generate-parentheses/
- * result:
+ * result: success
  */
 public class GenerateParentheses {
     public List<String> generateParenthesis(int n) {
