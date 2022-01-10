@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/leetcode-oj.iml" filepath="$PROJECT_DIR$/.idea/leetcode-oj.iml" />
+      <module fileurl="file://$PROJECT_DIR$/leetcode-oj1.iml" filepath="$PROJECT_DIR$/leetcode-oj1.iml" />
     </modules>
   </component>
 </project>
