@@ -82,3 +82,59 @@ public class AddTwoNumbers {
         return head;
     }
 }
+
+
+//2021-01-11 再做
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+//class Solution {
+//    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+//        ListNode resultHead = new ListNode();
+//        ListNode resultCur = resultHead;
+//        boolean shouldAdd = false;
+//        while (l1 != null && l2 != null) {
+//            int sum = l1.val + l2.val + (shouldAdd ? 1 : 0);
+//            shouldAdd = false;
+//            if (sum >= 10) {
+//                shouldAdd = true;
+//                sum = sum - 10;
+//            }
+//            resultCur.next = new ListNode(sum);
+//            resultCur = resultCur.next;
+//            l1 = l1.next;
+//            l2 = l2.next;
+//        }
+//
+//        if (l1 != null || l2 != null) {
+//            ListNode rest = l1 != null ? l1 : l2;
+//            ListNode restCur = rest;
+//            while (shouldAdd) {
+//                int sum = restCur.val + 1;
+//                if (sum >= 10) {
+//                    sum = sum - 10;
+//                } else {
+//                    shouldAdd = false;
+//                }
+//                restCur.val = sum;
+//                if (restCur.next == null && shouldAdd) {
+//                    restCur.next = new ListNode(1);
+//                    break;
+//                }
+//                restCur = restCur.next;
+//            }
+//            resultCur.next = rest;
+//        } else if (shouldAdd) {
+//            resultCur.next = new ListNode(1);
+//        }
+//
+//        return resultHead.next;
+//    }
+//}
